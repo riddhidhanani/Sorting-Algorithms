@@ -1,0 +1,34 @@
+#include <stdio.h>
+void selectionSort(int array[], int size){
+   int i, j, indexOfMin;
+   for(i = 0; i<size-1; i++) {
+      indexOfMin = i; //get index of minimum data
+      for(j = i+1; j<size; j++)
+         if(array[j] < array[indexOfMin])
+            indexOfMin = j;
+
+      int temp;
+      temp = array[i];
+      array[i] = array[indexOfMin];
+      array[indexOfMin] = temp;
+   }
+}
+int main(){
+   int n;
+   n = 5;
+   int arr[5] = {12, 19, 55, 2, 16}; 
+   printf("Array before Sorting: ");
+   for(int i = 0; i<n; i++)
+      printf("%d ",arr[i]);
+   printf("\n");
+   selectionSort(arr, n);
+   printf("Array after Sorting: ");
+   for(int i = 0; i<n; i++)
+      printf("%d ", arr[i]);
+   printf("\n");
+}
+
+
+//OUTPUT
+//Array before Sorting: 12 19 55 2 16
+//Array after Sorting: 2 12 16 19 55
