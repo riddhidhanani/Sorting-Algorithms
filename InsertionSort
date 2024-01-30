@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Function to print an array
+void printArray(int array[], int sizeofArr) {
+  for (int i = 0; i < sizeofArr; i++) {
+    printf("%d ", array[i]);
+  }
+  printf("\n");
+}
+
+void insertionSort(int array[], int sizeofArr) {
+  for (int i = 1; i < sizeofArr; i++) {
+    int key = array[i];
+    int j = i - 1;
+
+      while (key < array[j] && j >= 0) {
+      array[j + 1] = array[j];
+      j=j-1;
+    }
+    array[j + 1] = key;
+  }
+}
+
+// Driver code
+int main() {
+  int data[] = {9, 10, 1, 0, 7};
+  int sizeofArr = sizeof(data) / sizeof(data[0]);
+  insertionSort(data, sizeofArr);
+  printf("Sorted array using Insertion Sort:\n");
+  printArray(data, sizeofArr);
+}
