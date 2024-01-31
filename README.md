@@ -1,2 +1,2 @@
 # Sorting-Algorithms
-HW 2
+hands on 2
